@@ -9,10 +9,13 @@ printf ${MODIFIED_FILES}
 echo " ******************************"
 
 PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
-XML_FILES=$(grep -P '.*\.xml' <<< $PATHS)
+XML_FILES=$(grep -P '.+\.xml' <<< $PATHS)
+
+
+
 echo "$XML_FILES" | while read FILE ; do
     echo "$FILE **"
-    if [[ ! -f $CORE_FILE ]]
+    if [[ ! -f $FILE ]]
     then
       # skip deleted files
       continue
