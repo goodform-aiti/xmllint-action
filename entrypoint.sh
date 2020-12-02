@@ -22,7 +22,6 @@ echo "$XML_FILES" | while read FILE ; do
     if xmllint $FILE --noout ; then
       echo "xml-syntax is fine: $FILE"
     else
-      echo "syntax error in: $FILE"
       ERROR=101
     fi
 done
