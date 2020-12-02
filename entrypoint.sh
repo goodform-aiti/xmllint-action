@@ -27,6 +27,3 @@ echo "$XML_FILES" | while read FILE ; do
 done
 
 exit ${ERROR}
-
-
-#xmllint $1 --schema $2 --noout
