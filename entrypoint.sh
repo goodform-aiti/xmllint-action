@@ -1,3 +1,11 @@
-#!/bin/sh -l
+#!/bin/bash
+set -e
 
-xmllint $1 --schema $2 --noout
+
+echo " ************** MODIFIED FILES"
+
+printf ${MODIFIED_FILES}
+
+echo " ******************************"
+
+#xmllint $1 --schema $2 --noout
