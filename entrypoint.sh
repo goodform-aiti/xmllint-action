@@ -8,7 +8,15 @@ printf ${MODIFIED_FILES}
 echo " ******************************"
 
 PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
+
+echo $PATHS
+echo "****"
+
+
 XML_FILES=$(grep -P '.+\.xml' <<< $PATHS)
+
+echo $XML_FILES
+echo "****"
 
 
 
