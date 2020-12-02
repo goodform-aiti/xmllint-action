@@ -11,6 +11,7 @@ echo " ******************************"
 PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
 XML_FILES=$(grep -P '.*\.xml' <<< $PATHS)
 echo "$XML_FILES" | while read FILE ; do
+    echo $FILE
     if [[ ! -f $CORE_FILE ]]
     then
       # skip deleted files
