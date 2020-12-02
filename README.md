@@ -2,15 +2,6 @@
 
 This action validates an xml files with a given xml schema using xmllint.
 
-## Inputs
-
-### `xml-file`
-
-**Required** The name of the source (.xml) file.
-
-### `xml-schema-file`
-
-**Required** The name of the schema (.xsd) file.
 
 ## Example usage
 
@@ -29,7 +20,6 @@ jobs:
       run: wget https://apps.nextcloud.com/schema/apps/info.xsd
     - name: Lint info.xml
       uses: ateli-development/xmllint-action@master
-      with:
-        xml-file: ./appinfo/info.xml
-        xml-schema-file: ./info.xsd
+      env
+        MODIFIED_FILES: ${{ steps.file_changes.outputs.files}}
 ```
