@@ -11,5 +11,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.xml-file }}
-    - ${{ inputs.xml-schema-file }}
+    - ${{ inputs.dir }}
