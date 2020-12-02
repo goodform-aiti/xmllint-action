@@ -28,7 +28,7 @@ jobs:
     - name: Download schema
       run: wget https://apps.nextcloud.com/schema/apps/info.xsd
     - name: Lint info.xml
-      uses: ChristophWurst/xmllint-action@v1
+      uses: ateli-development/xmllint-action@master
       with:
         xml-file: ./appinfo/info.xml
         xml-schema-file: ./info.xsd
