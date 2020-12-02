@@ -7,12 +7,10 @@ echo " ************** MODIFIED FILES"
 
 printf ${MODIFIED_FILES}
 
-echo " ******************************"
+printf "\n*****************************\n"
 
 PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
 XML_FILES=$(grep -P '.+\.xml$' <<< $PATHS)
-
-
 
 
 
