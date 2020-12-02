@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+ERROR=0
 
 
 echo " ************** MODIFIED FILES"
