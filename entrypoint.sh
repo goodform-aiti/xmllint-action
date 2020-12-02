@@ -9,16 +9,11 @@ printf ${MODIFIED_FILES}
 
 echo " ******************************"
 
+MODIFIED_FILES="amir.xml\n.github/labeler.yml\n.github/workflows/main.yml\napp/Mage.php\napp/code/local/Mage/Catalog/Model/Layer.xml\nindex.php"
+
 PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
-
-echo $PATHS
-echo "****"
-
-
 XML_FILES=$(grep -P '.+\.xml' <<< $PATHS)
 
-echo $XML_FILES
-echo "****"
 
 
 
