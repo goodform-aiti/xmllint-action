@@ -9,12 +9,8 @@ printf ${MODIFIED_FILES}
 printf "\n*****************************\n"
 
 
-echo "aaaa"
 PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
-echo "bbbb"
 XML_FILES=$(grep -P '.+\.xml$' <<< $PATHS)
-
-echo "$XML_FILES ***"
 
 echo "$XML_FILES" | while read FILE ; do
     if [[ ! -f $FILE ]]
