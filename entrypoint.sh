@@ -14,6 +14,7 @@ XML_FILES=$(grep -P '.+\.xml$' <<< $PATHS)
 
 
 echo "$XML_FILES" | while read FILE ; do
+    echo "$FILE ***"
     if [[ ! -f $FILE ]]
     then
       # skip deleted files
