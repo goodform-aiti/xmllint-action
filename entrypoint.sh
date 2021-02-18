@@ -9,7 +9,8 @@ printf ${MODIFIED_FILES}
 printf "\n*****************************\n"
 
 
-PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
+#PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
+PATHS=$(find . -type f -name '*.xml')
 XML_FILES=$(grep -P '.+\.xml$' <<< $PATHS)
 
 echo "$XML_FILES" | while read FILE ; do
