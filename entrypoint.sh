@@ -2,26 +2,14 @@
 ERROR=0
 
 
-echo " ************** MODIFIED FILES"
-
-printf ${MODIFIED_FILES}
-
-printf "\n*****************************\n"
-
-
 #PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
 PATHS=$(find . -type f -name '*.xml')
 XML_FILES=$(grep -P '.+\.xml$' <<< $PATHS)
 
 echo "$XML_FILES" | while read FILE ; do
-    if [[ ! -f $FILE ]]
-    then
-      # skip deleted files
-      continue
-    fi
     if xmllint $FILE --noout ; then
-      echo "xml-syntax is fine: $FILE"
     else
+      echo "xml-syntax error found in: $FILE"
       exit 101
     fi
 done
