@@ -7,9 +7,7 @@ PATHS=$(find . -type f -name '*.xml')
 XML_FILES=$(grep -P '.+\.xml$' <<< $PATHS)
 
 echo "$XML_FILES" | while read FILE ; do
-    if xmllint "$FILE" --noout ; then
-        echo ""
-    else
+    if ! xmllint "$FILE" --noout ; then
       echo "xml-syntax error found in: $FILE"
       exit 101
     fi
