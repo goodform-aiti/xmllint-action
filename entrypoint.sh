@@ -3,7 +3,7 @@ ERROR=0
 
 
 #PATHS=$(printf ${MODIFIED_FILES} | tr \\n '\n')
-PATHS=$(find . -type f -name '*.xml' ! -name 'wsdl.xml' ! -name 'wsdl2.xml' ! -name 'wsi.xml' ! -name 'response_noxml.xml')
+PATHS=$(find . -type f -name '*.xml' ! -name 'wsdl.xml' ! -name 'wsdl2.xml' ! -name 'wsi.xml' ! -name 'response_noxml.xml' ! -name 'response_malformed.xml')
 XML_FILES=$(grep -P '.+\.xml$' <<< $PATHS)
 
 echo "$XML_FILES" | while read FILE ; do
